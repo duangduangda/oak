@@ -25,7 +25,7 @@ public class KeyWordFilter {
 		StringBuffer patternBuf = new StringBuffer();
 		InputStream in = null;
 		BufferedReader bf = null;
-		String filepath = "/util/keywords.properties";
+		String filepath = "/keywords.properties";
 		try {
 			in = KeyWordFilter.class.getResourceAsStream(filepath);
 			bf = new BufferedReader(new InputStreamReader(in, "UTF-8"));

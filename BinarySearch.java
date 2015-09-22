@@ -20,23 +20,19 @@ public class BinarySearch {
 	private static void binarySearch(int[] a, int key) {
 		SortUtil.quickSort(a);
 		int left = 0,right = a.length - 1, mid = a.length/2;
-		boolean isFound = false;
 		while(left <= right){
 			if(a[mid] > key){
 				right = mid - 1;
-				mid = (left + right - 1 )/ 2;
+				mid = (left + right)/ 2;
 			}else if(a[mid] < key){
 				left = mid + 1;
-				mid = (left + right - 1 ) / 2;
+				mid = (left + right) / 2;
 			}else{
-				isFound = true;
+				System.out.println("find the position,and index of the value in the array is " + mid);
 				break;
 			}
 		}
-		if(isFound){
-			//the return index is base on the sorted array,not the initial index
-			System.out.println("find the position,and index of the value in the array is " + mid);
-		}else{
+		if(left > right ){
 			System.out.println("can not find the value in array");
 		}
 	}
